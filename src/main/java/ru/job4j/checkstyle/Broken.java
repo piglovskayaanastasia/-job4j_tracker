@@ -6,7 +6,7 @@ public class Broken {
     private int sizeOfEmpty = 10;
     private String name;
 
-    public void broken() { }
+    public Broken() { }
 
     public void echo() { }
 
