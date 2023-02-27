@@ -8,16 +8,16 @@ public class Error {
     public Error() {
     }
 
-    public void info() {
-        System.out.println(active);
-        System.out.println(status);
-        System.out.println(message);
-    }
-
     public Error(boolean active, int status, String message) {
         this.active = active;
         this.status = status;
         this.message = message;
+    }
+
+    public void info() {
+        System.out.println(active);
+        System.out.println(status);
+        System.out.println(message);
     }
 
     public static void main(String[] args) {
