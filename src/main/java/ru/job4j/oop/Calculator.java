@@ -8,11 +8,11 @@ public class Calculator {
     }
 
     public static int minus(int y) {
-        return x - y;
+        return y - x;
     }
 
     public int divide(int y) {
-        return x / y;
+        return y / x;
     }
 
     public int multiply(int y) {
@@ -20,22 +20,20 @@ public class Calculator {
     }
 
     public int sumAllOperation() {
-        return sum(10) + minus(1) + divide(1) + multiply(5);
+        return sum(10) + minus(10) + divide(10) + multiply(10);
     }
 
     public static void main(String[] args) {
         int rsl = sum(10);
         System.out.println(rsl);
-        rsl = minus(1);
+        rsl = minus(10);
         System.out.println(rsl);
         Calculator calculator = new Calculator();
-        rsl = calculator.divide(1);
+        rsl = calculator.divide(10);
         System.out.println(rsl);
-        Calculator calculator1 = new Calculator();
-        rsl = calculator1.multiply(5);
+        rsl = calculator.multiply(10);
         System.out.println(rsl);
-        Calculator calculator2 = new Calculator();
-        rsl = calculator2.sumAllOperation();
+        rsl = calculator.sumAllOperation();
         System.out.println(rsl);
     }
 }
