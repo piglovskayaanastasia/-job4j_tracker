@@ -19,8 +19,8 @@ public class Calculator {
         return x * y;
     }
 
-    public int sumAllOperation() {
-        return sum(10) + minus(10) + divide(10) + multiply(10);
+    public int sumAllOperation(int y) {
+        return sum(y) + minus(y) + divide(y) + multiply(y);
     }
 
     public static void main(String[] args) {
@@ -33,7 +33,7 @@ public class Calculator {
         System.out.println(rsl);
         rsl = calculator.multiply(10);
         System.out.println(rsl);
-        rsl = calculator.sumAllOperation();
+        rsl = calculator.sumAllOperation(10);
         System.out.println(rsl);
     }
 }
