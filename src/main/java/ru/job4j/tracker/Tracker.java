@@ -7,16 +7,25 @@ public class Tracker {
     private int ids = 1;
     private int size = 0;
 
+    /**
+     * Метод добавления заявок;
+     * */
     public Item add(Item item) {
         item.setId(ids++);
         items[size++] = item;
         return item;
     }
 
+    /**
+     * получение списка всех заявок;
+     * */
     public Item[] findAll() {
         return Arrays.copyOf(items, size);
     }
 
+    /**
+     * получение списка по имени
+     * */
     public Item[] findByName(String key) {
         Item[] rsl = new Item[size];
         int count = 0;
@@ -28,15 +37,32 @@ public class Tracker {
         return Arrays.copyOf(rsl, count);
     }
 
-    public Item findById(int id) {
-        Item rsl = null;
+    /**
+     * получение заявки по id;
+     */
+    private int indexOf(int id) {
+        int rsl = -1;
         for (int index = 0; index < size; index++) {
-            Item item = items[index];
-            if (item.getId() == id) {
-                rsl = item;
+            if (items[index].getId() == id) {
+                rsl = index;
                 break;
             }
         }
         return rsl;
+    }
+
+    public Item findById(int id) {
+        int index = indexOf(id);
+        return index != -1 ? items[index] : null;
+    }
+
+    public boolean replace(int id, Item item) {
+        int index = indexOf(id);
+        item.setId(id);
+        if (index != -1) {
+            items[index] = item;
+            return true;
+        }
+        return false;
     }
 }
