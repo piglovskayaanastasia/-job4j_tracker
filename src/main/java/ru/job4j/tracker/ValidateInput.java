@@ -5,8 +5,8 @@ public class ValidateInput implements Input {
     private final Input in;
 
     public ValidateInput(Output out, Input input) {
-        this.out = out;
         this.in = input;
+        this.out = out;
     }
 
     @Override
