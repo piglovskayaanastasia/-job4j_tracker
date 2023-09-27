@@ -28,6 +28,17 @@ class ValidateInputTest {
     }
 
     @Test
+    public void whenMinus1InputThenMinus1() {
+        Output out = new StubOutput();
+        Input in = new StubInput(
+                new String[] {"-1"}
+        );
+        ValidateInput input = new ValidateInput(out, in);
+        int selected = input.askInt("Enter menu:");
+        assertThat(selected).isEqualTo(-1);
+    }
+
+    @Test
     public void whenSeveralValidInput() {
         String[] toCheck = new String[] {"2", "1", "3", "6", "9", "4"};
         Output out = new StubOutput();
@@ -41,16 +52,5 @@ class ValidateInputTest {
         result[4] = input.askInt("Enter menu:");
         result[5] = input.askInt("Enter menu:");
         assertThat(result).isEqualTo(new int[] {2, 1, 3, 6, 9, 4});
-    }
-
-    @Test
-    public void whenMinus1InputThenMinus1() {
-        Output out = new StubOutput();
-        Input in = new StubInput(
-                new String[] {"-1"}
-        );
-        ValidateInput input = new ValidateInput(out, in);
-        int selected = input.askInt("Enter menu:");
-        assertThat(selected).isEqualTo(-1);
     }
 }
